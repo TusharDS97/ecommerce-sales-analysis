@@ -1,0 +1,174 @@
+{
+  "cleaning": {
+    "raw_order_lines": 43161,
+    "duplicate_lines_removed": 172,
+    "missing_delivery_days": 614,
+    "missing_age": 543,
+    "clean_order_lines": 42989
+  },
+  "kpi": {
+    "gross_revenue": 67645745.89,
+    "net_revenue": 61009647.86,
+    "profit": 18162878.03,
+    "profit_margin_pct": 29.770501333950826,
+    "orders": 32025,
+    "customers_who_bought": 12519,
+    "aov_gross": 2112.2793408274783,
+    "line_return_rate_pct": 9.790876735909187,
+    "revenue_lost_to_returns_pct": 9.810074443988071,
+    "net_revenue_2024": 26640844.38,
+    "net_revenue_2025": 34368803.480000004,
+    "yoy_growth_pct": 29.007936046507577
+  },
+  "seasonality": {
+    "peak_month": "2025-10",
+    "peak_month_net": 4119329.7800000003,
+    "festive_share_2024_pct": 22.67474995850714,
+    "festive_share_2025_pct": 22.58023592388384,
+    "oct_vs_median_month_x": 1.7205688494558709
+  },
+  "category": {
+    "Electronics": {
+      "net_revenue": 20324088.08,
+      "margin_pct": 19.49176555625319,
+      "return_rate_pct": 7.4689507494646685,
+      "profit": 3961523.5999999996
+    },
+    "Fashion": {
+      "net_revenue": 16009757.31,
+      "margin_pct": 38.49416165821941,
+      "return_rate_pct": 15.150097465886939,
+      "profit": 6162821.859999999
+    },
+    "Home & Kitchen": {
+      "net_revenue": 15348081.94,
+      "margin_pct": 27.4880252561383,
+      "return_rate_pct": 8.052230685527748,
+      "profit": 4218884.640000001
+    },
+    "Beauty": {
+      "net_revenue": 6689525.02,
+      "margin_pct": 44.13589920319934,
+      "return_rate_pct": 7.13168595558336,
+      "profit": 2952482.02
+    },
+    "Books & Stationery": {
+      "net_revenue": 2638195.51,
+      "margin_pct": 32.869660596154986,
+      "return_rate_pct": 7.294960995150748,
+      "profit": 867165.91
+    }
+  },
+  "patterns": {
+    "weekend_uplift_pct": 17.55619310422729,
+    "best_weekday": "Sat",
+    "top5_city_share_pct": 60.05279727900401,
+    "top_city": "Mumbai",
+    "top_city_share_pct": 14.679777566577156
+  },
+  "top_product_by_revenue": {
+    "product_name": "Smartwatch",
+    "net_revenue": 7012030.99
+  },
+  "top_product_by_profit": {
+    "product_name": "Sneakers",
+    "profit": 1998775.17
+  },
+  "returns": {
+    "by_payment_pct": {
+      "Cash on Delivery": 15.704944361592291,
+      "Wallet": 9.432146294513956,
+      "Debit Card": 8.595988538681947,
+      "Credit Card": 8.198258539852645,
+      "UPI": 8.103448275862068,
+      "Net Banking": 8.059467918622849
+    },
+    "by_category_pct": {
+      "Fashion": 15.150097465886939,
+      "Home & Kitchen": 8.052230685527748,
+      "Electronics": 7.4689507494646685,
+      "Books & Stationery": 7.294960995150748,
+      "Beauty": 7.13168595558336
+    },
+    "by_discount_pct": {
+      "0\u20135%": 9.660626689358294,
+      "5\u201310%": 9.817682508200473,
+      "10\u201320%": 9.542124542124542,
+      "20\u201330%": 11.149825783972126,
+      "30%+": 14.925373134328357
+    },
+    "cod_fashion_pct": 20.35498489425982,
+    "upi_books_pct": 5.0691244239631335,
+    "revenue_returned": 6636098.03,
+    "whatif_cod_fashion_revenue_recovered": 252357.66278030715
+  },
+  "customers": {
+    "repeat_rate_pct": 61.322789360172536,
+    "avg_orders_per_customer": 2.558111670261203,
+    "top10pct_customers_revenue_share_pct": 33.68108196125556,
+    "segments": {
+      "Champions": {
+        "customers": 2474,
+        "customer_share_pct": 19.761961818036582,
+        "revenue_share_pct": 38.693908583395654
+      },
+      "Loyal": {
+        "customers": 2754,
+        "customer_share_pct": 21.998562185478075,
+        "revenue_share_pct": 24.37562023653352
+      },
+      "At risk": {
+        "customers": 2449,
+        "customer_share_pct": 19.56226535665788,
+        "revenue_share_pct": 21.810710136427918
+      },
+      "New / promising": {
+        "customers": 1389,
+        "customer_share_pct": 11.095135394200813,
+        "revenue_share_pct": 4.282369545871364
+      },
+      "Needs attention": {
+        "customers": 890,
+        "customer_share_pct": 7.109194025081876,
+        "revenue_share_pct": 2.9837783921934604
+      },
+      "Lost": {
+        "customers": 2563,
+        "customer_share_pct": 20.47288122054477,
+        "revenue_share_pct": 7.853613105578086
+      }
+    }
+  },
+  "cohort": {
+    "month_1_pooled_retention_pct": 12.71849508906276,
+    "month_3_pooled_retention_pct": 11.488419304235489,
+    "month_6_pooled_retention_pct": 10.11093502377179,
+    "month_12_pooled_retention_pct": 9.610757254069355
+  },
+  "forecast": {
+    "backtest_months": [
+      "2025-10",
+      "2025-11",
+      "2025-12"
+    ],
+    "model_mape_pct": 4.372543699871118,
+    "seasonal_naive_mape_pct": 23.657146093582213,
+    "next_3_months": {
+      "2026-01": {
+        "forecast": 3579923.3421980124,
+        "low_80": 3375620.4711254523,
+        "high_80": 3796591.247635522
+      },
+      "2026-02": {
+        "forecast": 2737149.4738945975,
+        "low_80": 2580942.9178826828,
+        "high_80": 2902810.1282408996
+      },
+      "2026-03": {
+        "forecast": 3181585.68395008,
+        "low_80": 3000015.5698271156,
+        "high_80": 3374144.9764873837
+      }
+    }
+  }
+}

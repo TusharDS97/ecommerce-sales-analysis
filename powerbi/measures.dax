@@ -1,0 +1,205 @@
+// measures.dax
+// Every measure the dashboard uses. Create them in Power BI with:
+//   Report view > right-click the fact_orders table > New measure > paste one block.
+// (I like to make a separate empty table called "_Measures" to hold them, so they
+//  don't get lost among the columns. Home > Enter data > name it _Measures.)
+//
+// Before you start, in Model view:
+//   dim_date  -> right-click > Mark as date table > choose the [date] column
+//   Relationships (all many-to-one, single direction, dimension -> fact):
+//       dim_date[date]            -> fact_orders[order_date]
+//       dim_customers[customer_id]-> fact_orders[customer_id]
+//       dim_products[product_id]  -> fact_orders[product_id]
+//
+// Naming: I write measure names the way a manager would say them out loud.
+
+
+// =============================================================================
+// 1. THE MONEY
+// =============================================================================
+
+// What customers paid, before any refunds.
+Gross Revenue =
+SUM ( fact_orders[line_revenue] )
+
+// What we actually keep: items that came back are treated as fully refunded.
+Net Revenue =
+CALCULATE (
+    SUM ( fact_orders[line_revenue] ),
+    fact_orders[returned_flag] = 0
+)
+
+Revenue Refunded =
+[Gross Revenue] - [Net Revenue]
+
+// Cost of the products we actually kept (returned items go back on the shelf).
+Product Cost =
+CALCULATE (
+    SUM ( fact_orders[line_cost] ),
+    fact_orders[returned_flag] = 0
+)
+
+Profit =
+[Net Revenue] - [Product Cost]
+
+// Product margin only. Ads, shipping and return handling are not in this data.
+Profit Margin % =
+DIVIDE ( [Profit], [Net Revenue] )
+
+
+// =============================================================================
+// 2. VOLUME
+// =============================================================================
+
+Orders =
+DISTINCTCOUNT ( fact_orders[order_id] )
+
+Items Sold =
+SUM ( fact_orders[quantity] )
+
+// Customers who bought in whatever period / filter is selected.
+Buying Customers =
+DISTINCTCOUNT ( fact_orders[customer_id] )
+
+// Average basket, measured before refunds.
+Average Order Value =
+DIVIDE ( [Gross Revenue], [Orders] )
+
+
+// =============================================================================
+// 3. RETURNS
+// =============================================================================
+
+// Share of items (not orders) that came back.
+Return Rate % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_orders ), fact_orders[returned_flag] = 1 ),
+    COUNTROWS ( fact_orders )
+)
+
+Refunded Share of Revenue % =
+DIVIDE ( [Revenue Refunded], [Gross Revenue] )
+
+// Handy as a tooltip / sample-size guard: how many items a return rate is based on.
+Items in Sample =
+COUNTROWS ( fact_orders )
+
+
+// =============================================================================
+// 4. COMPARING OVER TIME  (needs dim_date marked as a date table)
+// =============================================================================
+
+Net Revenue Last Year =
+CALCULATE ( [Net Revenue], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+Growth vs Last Year % =
+DIVIDE ( [Net Revenue] - [Net Revenue Last Year], [Net Revenue Last Year] )
+
+// Smooths out the monthly jumps. Use it on a chart whose axis is month.
+Net Revenue 3-Month Average =
+DIVIDE (
+    CALCULATE (
+        [Net Revenue],
+        DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -3, MONTH )
+    ),
+    3
+)
+
+// Average per selling day. This is the fair way to compare weekdays, because a
+// period can contain more Saturdays than Tuesdays. Use it on the weekday chart.
+Avg Daily Net Revenue =
+AVERAGEX ( VALUES ( dim_date[date] ), [Net Revenue] )
+
+// Cumulative total within the selected year.
+Net Revenue YTD =
+TOTALYTD ( [Net Revenue], dim_date[date] )
+
+
+// =============================================================================
+// 5. SHARES  (each bar as a slice of whatever is currently on screen)
+// =============================================================================
+
+Share of Net Revenue % =
+DIVIDE (
+    [Net Revenue],
+    CALCULATE ( [Net Revenue], ALLSELECTED () )
+)
+
+Share of Profit % =
+DIVIDE (
+    [Profit],
+    CALCULATE ( [Profit], ALLSELECTED () )
+)
+
+
+// =============================================================================
+// 6. CUSTOMERS
+// =============================================================================
+
+Orders per Customer =
+DIVIDE ( [Orders], [Buying Customers] )
+
+// A repeat customer = 2 or more orders inside the current filter.
+Repeat Customers =
+COUNTROWS (
+    FILTER (
+        VALUES ( fact_orders[customer_id] ),
+        CALCULATE ( DISTINCTCOUNT ( fact_orders[order_id] ) ) >= 2
+    )
+)
+
+Repeat Rate % =
+DIVIDE ( [Repeat Customers], [Buying Customers] )
+
+Net Revenue per Customer =
+DIVIDE ( [Net Revenue], [Buying Customers] )
+
+// For the RFM segment chart: each segment's slice of customers and of revenue.
+// Put dim_customers[rfm_segment] on the axis and filter out "No purchases".
+Segment Share of Customers % =
+DIVIDE (
+    COUNTROWS ( FILTER ( dim_customers, dim_customers[lifetime_orders] > 0 ) ),
+    CALCULATE (
+        COUNTROWS ( FILTER ( dim_customers, dim_customers[lifetime_orders] > 0 ) ),
+        ALLSELECTED ( dim_customers[rfm_segment] )
+    )
+)
+
+Segment Share of Revenue % =
+DIVIDE (
+    [Net Revenue],
+    CALCULATE ( [Net Revenue], ALLSELECTED ( dim_customers[rfm_segment] ) )
+)
+
+// How much money sits with customers we are about to lose.
+At-Risk Net Revenue =
+CALCULATE ( [Net Revenue], dim_customers[rfm_segment] = "At risk" )
+
+
+// =============================================================================
+// 7. COHORT MATRIX  (uses the cohort_retention table, no relationship needed)
+// =============================================================================
+
+// In a matrix: cohort_month on rows, months_since_first_order on columns.
+// Turn OFF row totals (a total across months means nothing here). The column
+// totals are the pooled retention for that month.
+Retention % =
+DIVIDE (
+    SUM ( cohort_retention[active_customers] ),
+    SUM ( cohort_retention[cohort_size] )
+)
+
+
+// =============================================================================
+// 8. WORDS THAT UPDATE THEMSELVES  (dynamic titles / text boxes)
+// =============================================================================
+// Use these in a card or in the "fx" button of a visual title so headlines stay
+// true when someone changes a slicer.
+
+Headline Revenue Text =
+"We kept ₹" & FORMAT ( [Net Revenue] / 100000, "#,##0.0" ) & " lakh after returns, at a "
+    & FORMAT ( [Profit Margin %], "0.0%" ) & " margin."
+
+Returns Callout =
+"About " & FORMAT ( [Return Rate %], "0.0%" ) & " of items come back, which is ₹"
+    & FORMAT ( [Revenue Refunded] / 100000, "#,##0.0" ) & " lakh refunded."

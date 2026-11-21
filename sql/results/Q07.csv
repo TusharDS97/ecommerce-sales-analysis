@@ -1,0 +1,16 @@
+category,rank_in_category,product_name,profit_lakh,net_revenue_lakh
+Beauty,1,Hair Dryer,8.1,18.2
+Beauty,2,Perfume,7.1,16.2
+Beauty,3,Beard Trimmer,6.3,14.3
+Books & Stationery,1,Art Supplies Kit,2.5,7.4
+Books & Stationery,2,Coding Handbook,1.9,5.9
+Books & Stationery,3,Fountain Pen,1.6,4.9
+Electronics,1,Smartwatch,13.7,70.1
+Electronics,2,Bluetooth Speaker,8.9,45.7
+Electronics,3,Wireless Earbuds,7.9,41.1
+Fashion,1,Sneakers,20.0,51.9
+Fashion,2,Denim Jeans,13.9,36.2
+Fashion,3,Backpack,10.3,26.8
+Home & Kitchen,1,Air Fryer,17.1,62.2
+Home & Kitchen,2,Mixer Grinder,11.7,42.5
+Home & Kitchen,3,Bedsheet Set,5.2,18.9

@@ -1,0 +1,31 @@
+product_id,product_name,category,list_price,unit_cost
+P001,Wireless Earbuds,Electronics,1999,1439.28
+P002,Smartwatch,Electronics,3499,2519.28
+P003,Power Bank 20000mAh,Electronics,1599,1151.28
+P004,Bluetooth Speaker,Electronics,2299,1655.28
+P005,Phone Case,Electronics,399,287.28
+P006,USB-C Cable,Electronics,299,215.28
+P007,Men's T-Shirt,Fashion,699,384.45
+P008,Women's Kurti,Fashion,1099,604.45
+P009,Sneakers,Fashion,2499,1374.45
+P010,Denim Jeans,Fashion,1799,989.45
+P011,Sports Cap,Fashion,449,246.95
+P012,Backpack,Fashion,1299,714.45
+P013,Air Fryer,Home & Kitchen,4999,3249.35
+P014,Mixer Grinder,Home & Kitchen,3299,2144.35
+P015,Bedsheet Set,Home & Kitchen,1499,974.35
+P016,Water Bottle,Home & Kitchen,549,356.85
+P017,Storage Boxes,Home & Kitchen,799,519.35
+P018,LED Desk Lamp,Home & Kitchen,999,649.35
+P019,Face Serum,Beauty,799,399.5
+P020,Sunscreen SPF50,Beauty,499,249.5
+P021,Hair Dryer,Beauty,1699,849.5
+P022,Perfume,Beauty,1399,699.5
+P023,Lip Balm Set,Beauty,349,174.5
+P024,Beard Trimmer,Beauty,1299,649.5
+P025,Self-help Book,Books & Stationery,349,209.4
+P026,Notebook Pack,Books & Stationery,249,149.4
+P027,Fountain Pen,Books & Stationery,599,359.4
+P028,Study Planner,Books & Stationery,399,239.4
+P029,Coding Handbook,Books & Stationery,749,449.4
+P030,Art Supplies Kit,Books & Stationery,899,539.4

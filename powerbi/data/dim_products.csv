@@ -1,0 +1,31 @@
+product_id,product_name,category,list_price,unit_cost,list_margin_pct
+P001,Wireless Earbuds,Electronics,1999.0,1439.28,28.0
+P002,Smartwatch,Electronics,3499.0,2519.28,28.0
+P003,Power Bank 20000mAh,Electronics,1599.0,1151.28,28.0
+P004,Bluetooth Speaker,Electronics,2299.0,1655.28,28.0
+P005,Phone Case,Electronics,399.0,287.28,28.0
+P006,USB-C Cable,Electronics,299.0,215.28,28.0
+P007,Men's T-Shirt,Fashion,699.0,384.45,45.0
+P008,Women's Kurti,Fashion,1099.0,604.45,45.0
+P009,Sneakers,Fashion,2499.0,1374.45,45.0
+P010,Denim Jeans,Fashion,1799.0,989.45,45.0
+P011,Sports Cap,Fashion,449.0,246.95,45.0
+P012,Backpack,Fashion,1299.0,714.45,45.0
+P013,Air Fryer,Home & Kitchen,4999.0,3249.35,35.0
+P014,Mixer Grinder,Home & Kitchen,3299.0,2144.35,35.0
+P015,Bedsheet Set,Home & Kitchen,1499.0,974.35,35.0
+P016,Water Bottle,Home & Kitchen,549.0,356.85,35.0
+P017,Storage Boxes,Home & Kitchen,799.0,519.35,35.0
+P018,LED Desk Lamp,Home & Kitchen,999.0,649.35,35.0
+P019,Face Serum,Beauty,799.0,399.5,50.0
+P020,Sunscreen SPF50,Beauty,499.0,249.5,50.0
+P021,Hair Dryer,Beauty,1699.0,849.5,50.0
+P022,Perfume,Beauty,1399.0,699.5,50.0
+P023,Lip Balm Set,Beauty,349.0,174.5,50.0
+P024,Beard Trimmer,Beauty,1299.0,649.5,50.0
+P025,Self-help Book,Books & Stationery,349.0,209.4,40.0
+P026,Notebook Pack,Books & Stationery,249.0,149.4,40.0
+P027,Fountain Pen,Books & Stationery,599.0,359.4,40.0
+P028,Study Planner,Books & Stationery,399.0,239.4,40.0
+P029,Coding Handbook,Books & Stationery,749.0,449.4,40.0
+P030,Art Supplies Kit,Books & Stationery,899.0,539.4,40.0

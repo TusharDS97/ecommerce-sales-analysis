@@ -1,0 +1,21 @@
+customer_id,city,acquisition_channel,orders_so_far,net_spend,days_since_last_order
+C09354,Pune,Instagram Ads,6,31038.0,372
+C07019,Lucknow,Email,8,30212.0,208
+C00958,Ahmedabad,Google Ads,9,29619.0,391
+C05437,Lucknow,Email,4,27860.0,430
+C17346,Kolkata,Referral,8,26320.0,310
+C11996,Bengaluru,Instagram Ads,9,23219.0,302
+C02338,Chennai,Organic Search,10,22835.0,428
+C01546,Nagpur,Organic Search,6,22770.0,268
+C12230,Pune,Organic Search,6,22523.0,229
+C03009,Chennai,Organic Search,6,21747.0,272
+C14076,Chandigarh,Referral,5,21737.0,472
+C14335,Delhi,Email,9,21689.0,313
+C03869,Pune,Google Ads,5,21686.0,368
+C00322,Nagpur,Instagram Ads,3,21605.0,259
+C12464,Bengaluru,Google Ads,8,21387.0,233
+C11345,Ahmedabad,Instagram Ads,6,21145.0,224
+C17828,Bengaluru,Organic Search,7,20572.0,298
+C15571,Mumbai,Organic Search,4,20452.0,475
+C05443,Ahmedabad,Google Ads,8,19930.0,325
+C07939,Aurangabad,Instagram Ads,3,19560.0,405

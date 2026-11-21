@@ -1,0 +1,70 @@
+{
+  "train_items": 28669,
+  "test_items": 14320,
+  "cutoff": "2025-07-01",
+  "train_return_rate_pct": 9.7387421954027,
+  "test_return_rate_pct": 9.895251396648044,
+  "models": {
+    "Always guess the average": {
+      "roc_auc": 0.5,
+      "avg_precision": 0.09895251396648044,
+      "share_of_returns_in_riskiest_10pct": 0.10797459421312633,
+      "share_of_returns_in_riskiest_20pct": 0.2025405786873677
+    },
+    "Simple rule (COD + Fashion)": {
+      "roc_auc": 0.6298443885435604,
+      "avg_precision": 0.1524740721718151,
+      "share_of_returns_in_riskiest_10pct": 0.17360621030345802,
+      "share_of_returns_in_riskiest_20pct": 0.3112208892025406
+    },
+    "Logistic regression": {
+      "roc_auc": 0.6315653616739987,
+      "avg_precision": 0.15383680955282192,
+      "share_of_returns_in_riskiest_10pct": 0.18842625264643614,
+      "share_of_returns_in_riskiest_20pct": 0.323923782639379
+    },
+    "Random forest": {
+      "roc_auc": 0.6365115015130267,
+      "avg_precision": 0.15369968005857254,
+      "share_of_returns_in_riskiest_10pct": 0.1863091037402964,
+      "share_of_returns_in_riskiest_20pct": 0.32251235003528583
+    }
+  },
+  "riskiest_decile_actual_return_rate_pct": 18.6,
+  "safest_decile_actual_return_rate_pct": 6.0,
+  "odds_ratios": {
+    "Category: Fashion  (vs Books & Stationery)": 2.353,
+    "Payment method: Cash on Delivery  (vs UPI)": 2.197,
+    "City: Aurangabad  (vs Mumbai)": 1.318,
+    "Payment method: Wallet  (vs UPI)": 1.267,
+    "City: Nagpur  (vs Mumbai)": 1.253,
+    "City: Ahmedabad  (vs Mumbai)": 1.16,
+    "Category: Home & Kitchen  (vs Books & Stationery)": 1.143,
+    "Payment method: Debit Card  (vs UPI)": 1.14,
+    "City: Jaipur  (vs Mumbai)": 1.119,
+    "Discount, per +10 points": 1.101,
+    "City: Bengaluru  (vs Mumbai)": 1.087,
+    "Category: Electronics  (vs Books & Stationery)": 1.083,
+    "City: Delhi  (vs Mumbai)": 1.07,
+    "Quantity, per extra unit": 1.048,
+    "Category: Beauty  (vs Books & Stationery)": 1.043,
+    "City: Hyderabad  (vs Mumbai)": 1.043,
+    "City: Kolkata  (vs Mumbai)": 1.035,
+    "City: Kochi  (vs Mumbai)": 1.033,
+    "Price, per +Rs.1,000": 1.032,
+    "Acquisition channel: Referral  (vs Organic Search)": 1.032,
+    "City: Chennai  (vs Mumbai)": 1.032,
+    "City: Chandigarh  (vs Mumbai)": 1.026,
+    "Payment method: Credit Card  (vs UPI)": 1.019,
+    "Ordered on a weekend": 1.017,
+    "City: Lucknow  (vs Mumbai)": 1.012,
+    "Payment method: Net Banking  (vs UPI)": 1.01,
+    "Ordered in Oct-Nov": 1.009,
+    "City: Pune  (vs Mumbai)": 1.004,
+    "Age, per year": 1.002,
+    "Acquisition channel: Instagram Ads  (vs Organic Search)": 0.982,
+    "Acquisition channel: Google Ads  (vs Organic Search)": 0.959,
+    "City: Indore  (vs Mumbai)": 0.941,
+    "Acquisition channel: Email  (vs Organic Search)": 0.94
+  }
+}
